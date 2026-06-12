@@ -2,7 +2,7 @@
 // Database connection
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "ppPP@@0244";
 $database = "princetech_db";
 
 $conn = new mysqli($servername, $username, $password, $database);
