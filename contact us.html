@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact.Us</title>
+    <link rel="stylesheet" href="css/stylesc.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link class="favicon" rel="icon" href="images/favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <header>
+        <div id="datetime"></div>
+         <div class="logo">
+            <a href="javascript:void(0)">
+                <img src="logo.jpg" alt="PRINCETECH LTD Logo" id="logoExpand">
+            </a>
+         </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Portfolio</a></li>
+                <li><a href="contact us.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+
+        <div class="info-box">
+            <h3>Main Offices</h3>
+            <p>Accra & Kumasi, Ghana</p>
+
+            <h3>Email</h3>
+            <p>princetech94@gmail.com</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Phone Numbers</h3>
+
+            <div class="contact-person">
+                <span class="name">Aboagye Gyamfi</span>
+                <span class="number">+233 542 521836</span>
+            </div>
+
+            <div class="contact-person">
+                <span class="name">Prince Opoku</span>
+                <span class="number">+233 549 578738</span>
+            </div>
+
+            <div class="contact-person">
+                <span class="name">Collins Sarfo</span>
+                <span class="number">+233 206 970203</span>
+            </div>
+
+            <h3>Fax</h3>
+            <p>+233 202 010141</p>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2>Get in Touch</h2>
+
+        <!-- IMPORTANT: This form now submits to submit.php -->
+        <form id="contactForm" action="submit.php" method="POST">
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <textarea name="message" placeholder="Enter your message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing innovative tech solutions.</p>
+                <nav>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>Email: princetech94@gmail.com</p>
+                <p>Phone: +233 549 578738</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/Princtech" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/princetech94" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/prince-tech-36506b3a1" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <strong><p>&copy; 2025 PRINCETECH LTD. All rights reserved.</p></strong>
+    </footer>
+
+    <script>
+        // Allow form submission *only when fields are filled*
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            const name = document.getElementsByName("name")[0].value;
+            const email = document.getElementsByName("email")[0].value;
+            const message = document.getElementsByName("message")[0].value;
+
+            if (!name || !email || !message) {
+                event.preventDefault();
+                alert("Please fill out all fields.");
+            }
+        });
+
+       
+        const logo = document.querySelector(".logo img");
+
+        logo.addEventListener("click", () => {
+            logo.classList.toggle("expanded");
+        });
+    </script>
+
+
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("datetime").innerText = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+
+    <div class="dark-toggle" onclick="toggleDark()">🌙</div>
+    <script src="js/theme.js"></script>
+</body>
+</html>

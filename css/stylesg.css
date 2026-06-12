@@ -1,0 +1,342 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* ---------- HEADER ---------- */
+#datetime {
+    font-size: 14px;
+    color: #272401;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    font-weight: bolder;
+    top: 10px;
+    right: 20px;
+}
+
+header {
+    background-image: url("../images/sea.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    padding: 10px 0;
+    z-index: 12px;
+    box-shadow: 0px 8px 16px rgba(42, 137, 21, 0.796);
+
+    /* ✅ Curved bottom shape */
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    overflow: hidden; /* important for the curve to show */
+    height: 20vh; /* Adjust height as needed */
+    min-height: 220px; /* Ensure a minimum height */
+    
+}
+
+/* ---------- LOGO ---------- */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 30;
+}
+
+.logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 4px solid transparent;
+    background: linear-gradient(45deg, #19991fda, #474648cd);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-origin: top left; /* expand away from nav */
+}
+
+.logo img.expanded {
+    transform: scale(1.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+nav {
+    z-index: 12;
+    padding: 10px 0;
+    margin-top: 10px;
+    background-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+    background: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+    font-size: smaller;
+    background: linear-gradient(45deg, #18189bda, #080808dd);
+    border-radius: 10px;
+}
+
+nav ul li:hover {
+    background-color: #0d55fd;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(165, 161, 161, 0.546);
+    transform: translateY(-6px);
+    transition: background-color 0.4s, transform 0.4s;
+}
+
+/* Active Menu Highlight */
+.nav ul li a.active {
+    color: #089acbf0;
+    font-weight: bolder;
+    border-bottom: 3px solid #f1ed06;
+}   
+ 
+
+
+/* ---------- GALLERY GRID ---------- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: left;
+}
+
+/* ---------- GALLERY ITEM ---------- */
+.gallery-item {
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: 500px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(20, 66, 2, 0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    /* Entry Animation */
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+    animation: fadeSlideUp 1.2s ease-out forwards;
+}
+
+/* Animation delays for staggered effect */
+.gallery-item:nth-child(1) { animation-delay: 0.10s; }
+.gallery-item:nth-child(2) { animation-delay: 0.25s; }
+.gallery-item:nth-child(3) { animation-delay: 0.40s; }
+.gallery-item:nth-child(4) { animation-delay: 0.55s; }
+.gallery-item:nth-child(5) { animation-delay: 0.70s; }
+.gallery-item:nth-child(6) { animation-delay: 0.85s; }
+
+/* Hover — Now works even after animation */
+.gallery-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 25px rgba(20, 66, 2, 0.35);
+}
+
+
+
+/* Animation Keyframe */
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px) scale(0.92); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- GALLERY IMAGE ---------- */
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ---------- GALLERY INFO ---------- */
+.gallery-item .info {
+    padding: 18px;
+    text-align: left;
+}
+
+.gallery-item h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.gallery-item p {
+    font-size: 14px;
+    color: #444;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    background-image: url("../images/sea.jpg");
+    padding: 40px 20px;
+    margin-top: 20px;
+    text-align: left;
+    box-shadow: 0 -4px 10px rgba(51, 49, 49, 0.566);    
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+
+.footer-column p, .footer-column ul {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media i {
+    font-size: 28px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.social-media i:hover {
+    transform: scale(1.15);
+}
+
+.social-media img {
+    width: 30px; /* Size of social media icons */
+    height: 30px; /* Size of social media icons */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.social-media a:hover img {
+    transform: scale(1.1); /* Scale icons on hover */
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media screen and (max-width: 992px) {
+    .gallery-item { flex: 1 1 calc(50% - 20px); }
+}
+
+@media screen and (max-width: 600px) {
+    .gallery-item { flex: 1 1 100%; }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .logo img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .gallery {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .gallery-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+/* ===== MOBILE NAV LEFT ALIGN (KEEP SAME BUTTON SIZE) ===== */
+@media screen and (max-width: 768px) {
+
+    nav {
+        margin-top: 22px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;   /* ⬅️ move nav left */
+        padding-left: 15px;        /* ⬅️ space from logo */
+        gap: 6px;
+    }
+    nav a {
+        padding: 5px 20px;        /* keep button size */
+    }
+}

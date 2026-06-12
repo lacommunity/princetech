@@ -1,0 +1,304 @@
+
+/* =================================
+   DARK MODE OVERRIDES
+================================= */
+body.dark {
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+/* Header */
+body.dark header {
+    background: linear-gradient(
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.85)
+    ), url("../images/sea.jpg") center/cover no-repeat;
+    box-shadow: 0px 8px 16px rgba(25, 117, 160, 0.796);
+}
+body.dark .logo img{
+    border: 4px solid transparent;
+    font-weight: bold;
+    border-color: #0d6efd;
+    }
+
+body.dark .profile img{
+      border: 4px solid transparent;
+    font-weight: bold;
+    border-color: #0d6efd;
+}
+/* Date time */
+body.dark #datetime {
+    background: rgba(255,255,255,0.1);
+    color: #f8fafc;
+}
+
+/* Navigation */
+body.dark nav a {
+    background: linear-gradient(45deg, #0d9488, #1e40af);
+    color: #f8fafc;
+}
+
+body.dark nav ul li:hover {
+    background-color: #1e293b;
+}
+
+/* Active menu */
+body.dark .nav ul li a.active {
+    color: #fde047;
+    border-bottom: 3px solid #fde047;
+}
+
+/* Profile */
+body.dark .profile h3 {
+    color: #f8fafc;
+}
+
+/* Sections */
+body.dark section {
+    background: transparent;
+}
+
+/* Two column boxes */
+body.dark .left-box,
+body.dark .right-box {
+    background: #1e293b;
+    color: #e5e7eb;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
+}
+body.dark .left-box:hover,
+body.dark .right-box:hover {
+       box-shadow: 0 12px 25px rgba(5, 97, 116, 0.833);
+    }
+
+
+body.dark .left-box h3,
+body.dark .right-box h3 {
+    color: #f8fafc;
+}
+
+/* Team section */
+body.dark .team-title {
+    color: #f8fafc;
+}
+
+body.dark .team-member {
+    background: #1e293b;
+    color: #e5e7eb;
+}
+
+
+body.dark .team-member img {
+     border: 4px solid transparent;
+    font-weight: bold;
+    border-color: #0d6efd;
+}
+
+body.dark .team-member1 {
+    background: linear-gradient(135deg, #0f766e, #1e3a8a);
+    color: #f8fafc;
+}
+
+body.dark .desc {
+    color: #cbd5f5;
+}
+
+/* Skill bars */
+body.dark .skill-bar {
+    background: #334155;
+}
+
+body.dark .skill-fill {
+    background: linear-gradient(90deg, #22c55e, #3b82f6);
+}
+
+/* Mission & Vision */
+body.dark #mission-vision .left-box,
+body.dark #mission-vision .right-box {
+    background: #1e293b;
+    color: #e5e7eb;
+}
+
+body.dark #mission-vision h3,
+body.dark #mission-vision p {
+    color: #f8fafc;
+}
+
+/* Footer */
+body.dark footer {
+    background: linear-gradient(
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.85)
+    ), url("../images/sea.jpg") center/cover no-repeat;
+}
+
+body.dark .footer-column h3,
+body.dark .footer-column p,
+body.dark .footer-column ul {
+    color: #e5e7eb;
+}
+
+/* Social icons */
+body.dark .social-media i {
+    background: #020617;
+    color: #f8fafc;
+}
+.dark-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #020617;
+    color: #fff;
+    padding: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+/* ---------- SERVICES ---------- */
+body.dark .services-section {
+    background: #1e293b;
+}
+body.dark .services-section h2 {
+    color: #f8fafc;
+}
+body.dark .services-section .subtitle {
+    color: #cbd5e1;
+}
+body.dark .service-box {
+    background: #334155;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+}
+body.dark .service-box:hover {
+    box-shadow: 0 12px 25px rgba(5, 97, 116, 0.833);
+}
+body.dark .service-box h3 {
+    color: #22c55e;
+}
+body.dark .service-box p,
+body.dark .service-box ul li {
+    color: #cbd5e1;
+}
+
+/* ---------- CATCHY IMAGE CARDS ---------- */
+body.dark .catchy-services {
+    background: #1e293b;
+}
+body.dark .catchy-title,
+body.dark .catchy-subtitle {
+    color: #e5e7eb;
+}
+body.dark .catchy-card {
+    background: #334155;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+body.dark .catchy-card:hover {
+    box-shadow: 0 12px 25px rgba(5, 97, 116, 0.833);
+}
+body.dark .catchy-card h3 {
+    color: #f8fafc;
+}
+body.dark .catchy-card p {
+    color: #cbd5e1;
+}
+body.dark .catchy-card img {
+    border: 4px solid transparent;
+    font-weight: bold;
+    border-color: #0d6efd;
+}
+body.dark .learn-btn {
+    background: linear-gradient(45deg, #0d9488, #1e3a8a);
+    color: #f8fafc;
+}
+body.dark .learn-btn:hover {
+    background: #22c55e;
+}
+
+/* ---------- GALLERY ---------- */
+body.dark .gallery-item {
+    background: #1e293b;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+body.dark .gallery-item:hover {
+    box-shadow: 0 15px 25px rgba(0,0,0,0.7);
+}
+body.dark .gallery-item h3,
+body.dark .gallery-item p {
+    color: #e5e7eb;
+}
+
+/* ---------- CONTACT SECTION ---------- */
+body.dark .contact-info {
+    background: #1e293b;
+    color: #e5e7eb;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.7);
+}
+body.dark .info-box {
+    color: #e5e7eb;
+}
+body.dark .contact-form {
+    background: linear-gradient(45deg, #0d9488, #1e3a8a);
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    color: #f8fafc;
+}
+body.dark .contact-form h2 {
+    color: #f8fafc;
+}
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    background: #334155;
+    color: #f8fafc;
+}
+body.dark .contact-form button {
+    background: #111827;
+    color: #f8fafc;
+}
+body.dark .contact-form button:hover {
+    background: #1e293b;
+}
+body.dark .contact-person .name,
+body.dark .contact-person .number {
+    color: #e5e7eb;
+}
+
+
+.learn-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.learn-modal.active {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+    color: #222;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 15px;
+    animation: scaleIn 0.3s ease;
+}
+
+body.dark .modal-box {
+    background: #1e293b;
+    color: #e5e7eb;
+}
+
+.close-modal {
+    font-size: 28px;
+    float: right;
+    cursor: pointer;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

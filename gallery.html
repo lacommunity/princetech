@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/stylesg.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link class="favicon" rel="icon" href="images/favicon.png" type="image/png" syzes="16x16 radius=8">
+ 
+</head>
+<body>
+
+<header>
+    <div id="datetime"></div>
+
+    <div class="logo">
+            <a href="javascript:void(0)">
+                <img src="logo.jpg" alt="PRINCETECH LTD Logo" id="logoExpand">
+            </a>
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html" class>Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html" class="active">Portfolio</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1 class="gallery-title">Our Portfolio</h1>
+
+<!-- FILTER BUTTONS -->
+<section class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web Apps</button>
+    <button class="filter-btn" data-filter="mobile">Mobile App</button>
+    <button class="filter-btn" data-filter="design">UI/UX Design</button>
+    <button class="filter-btn" data-filter="desktopapp">Desktop App</button>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+
+    <div class="gallery-item" data-category="web">
+        <img src="images/optical2.png">
+        <div class="info">
+            <h3>Optical Management App</h3>
+            <p>A streamlined solution for managing optical inventory, patient records, and appointment scheduling, enhancing efficiency and improving patient care in optical practices.</p>
+            <span class="tag">Web App</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-category="web">
+        <img src="images/appp2.jpg">
+        <div class="info">
+            <h3>Risk Management App</h3>
+            <p>A user-friendly tool for identifying, assessing, and mitigating risks to enhance organizational resilience and decision-making.</p>
+            <span class="tag">Web App</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-category="design">
+        <img src="images/optical.png">
+        <div class="info">
+            <h3>XPOS UI/UX</h3>
+            <p>An intuitive and visually engaging interface designed to present key metrics and insights at a glance, enhancing user experience and facilitating data-driven decision-making.</p>
+            <span class="tag">UI/UX Design</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-category="web">
+        <img src="images/app1.jpg">
+        <div class="info">
+            <h3>Internal Business Chat System</h3>
+            <p>A secure and efficient messaging platform that facilitates real-time communication and collaboration among team members, boosting productivity and enhancing workflow within organizations.</p>
+            <span class="tag">Web App</span>
+        </div>
+    </div>
+
+       <div class="gallery-item" data-category="web">
+        <img src="images/appt.jpg">
+        <div class="info">
+            <h3>Internal Ticketing System</h3>
+            <p>A streamlined tool for managing internal requests and issues, enabling teams to log, track, and prioritize tasks efficiently, improving communication and operational efficiency across departments.</p>
+            <span class="tag">web</span>
+        </div>
+    </div>
+
+    <div class="gallery-item" data-category="desktopapp">
+        <img src="images/pharm.png">
+        <div class="info">
+            <h3>Pharmacy App</h3>
+            <p>An all-in-one solution for managing prescriptions, inventory, and customer engagement, enabling pharmacies to streamline operations, improve patient care, and facilitate convenient access to medications and services.</p>
+            <span class="tag">Desktop App</span>
+        </div>
+    </div>
+
+
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+   <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing innovative tech solutions.</p>
+                <nav>
+                    <ul>
+                       <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>If you have any questions, feel free to reach out!</p>
+                <p>Email: princetech94@gmail.com</p>
+                <p>Phone: +233 549 578738</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/Princtech" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/princetech94" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/prince-tech-36506b3a1" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+       <strong><p>&copy; 2025 PRINCETECH LTD. All rights reserved.</p></strong>
+    </footer>
+
+<script>
+/* ---- Lightbox ---- */
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    items.forEach(img => {
+        img.addEventListener('click', function () {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = this.src;
+        });
+    });
+
+    lightbox.addEventListener('click', function (e) {
+        if (e.target !== lightboxImg) lightbox.style.display = 'none';
+    });
+});
+
+/* ---- Filters ---- */
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        btn.classList.add('active');
+        
+        const category = btn.getAttribute('data-filter');
+
+        galleryItems.forEach(item => {
+            item.style.display = 
+                category === "all" || item.dataset.category === category 
+                ? "block" 
+                : "none";
+        });
+    });
+});
+
+
+        const logo = document.querySelector(".logo img");
+
+        logo.addEventListener("click", () => {
+            logo.classList.toggle("expanded");
+        });
+    </script>
+
+
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById("datetime").innerText = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    </script>
+</script>
+<div class="dark-toggle" onclick="toggleDark()">🌙</div>
+<script src="js/theme.js"></script>
+</body>
+</html>
